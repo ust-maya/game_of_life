@@ -11,7 +11,6 @@ game_of_life:
 	gcc $(OBJDIR)game_of_life.o $(OBJDIR)field.o -lncurses -o build/game_of_life
 
 clean:
-	rm -rf $(OBJDIR)*.o
-	rm -rf build/game_of_life
+	rm -rf build
 
 rebuild: clean game_of_life
