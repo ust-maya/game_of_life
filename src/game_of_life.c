@@ -22,6 +22,7 @@ int main() {
         if (ch == 'w') { speed -= 10000; }
         if (ch == 's') { speed += 10000; }
         if (speed < 10000) { speed = 10000; }
+        if (speed > 100000) { speed = 100000; }
         usleep(speed);
         erase();
         aliveOrDead(field, field_next_generation);
