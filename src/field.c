@@ -14,7 +14,7 @@ void initField(char field[][WIDTH_Y_80], char field_next_generation[][WIDTH_Y_80
 }
 
 void initFirstGeneration(char field[][WIDTH_Y_80]) {
-    FILE *file = fopen("../presets/preset.txt", "r");
+    FILE *file = fopen("presets/preset.txt", "r");
     for (int i = 0; i < HEIGHT_X_25; i++) {
         for (int j = 0; j < WIDTH_Y_80; j++) { fscanf(file, "%c", &field[i][j]); }
     }
