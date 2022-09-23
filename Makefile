@@ -8,6 +8,7 @@ game_of_life:
 	gcc game_of_life.o field.o -lncurses -o game_of_life
 
 clean:
+	rm -rf *.o
 	rm -rf build
 
 rebuild: clean game_of_life
