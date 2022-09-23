@@ -9,6 +9,6 @@ game_of_life:
 
 clean:
 	rm -rf *.o
-	rm -rf build
+	rm -rf game_of_life
 
 rebuild: clean game_of_life
