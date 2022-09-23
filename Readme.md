@@ -4,7 +4,7 @@ Simple program in terminal. Required `ncurses.h`.
 
 Compiling and run
 -----------
-Just run `make`, next `build/game_of_life`.
+Just run `make`, next `./game_of_life`.
 
 How to change the first generation?
 -----------
