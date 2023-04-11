@@ -57,5 +57,4 @@ cmake-build-debug
 src/.clang-format
 src/CPPLINT.cfg
 
-Dockerfile
 game_of_life
