@@ -1,27 +1,27 @@
 FLAGS = -Wall -Werror -Wextra
+PROJECT_NAME = game_of_life
 
-all: game_of_life
+all: clean $(PROJECT_NAME)
 
-game_of_life:
-	gcc $(FLAGS) -c src/game_of_life.c
-	gcc $(FLAGS) -c src/field.c
-	gcc game_of_life.o field.o -lncurses -o game_of_life
+$(PROJECT_NAME):
+	gcc $(FLAGS) -c src/*.c
+	gcc *.o -lncurses -o $(PROJECT_NAME)
 
 docker-build: clean
 	docker build -t game_of_life .
 
 docker-start:
-	docker run -it --name gol game_of_life
+	docker run -it --name gol $(PROJECT_NAME)
 
 docker-clean:
 	docker stop gol
 	docker rm gol
-	docker rmi game_of_life
+	docker rmi $(PROJECT_NAME)
 
 docker-rebuild: docker-clean docker-build docker-start
 
 clean:
 	rm -rf *.o
-	rm -rf game_of_life
+	rm -rf $(PROJECT_NAME)
 
-rebuild: clean game_of_life
+rebuild: clean $(PROJECT_NAME)
